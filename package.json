@@ -1,0 +1,40 @@
+{
+  "name": "micro-graphql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava --verbose"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "graphql": "^0.6.2"
+  },
+  "peerDependencies": {
+    "micro-core": "^0.4.0"
+  },
+  "devDependencies": {
+    "ava": "^0.15.2",
+    "babel-cli": "^6.11.4",
+    "babel-plugin-transform-async-to-generator": "^6.8.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "node-fetch": "^1.6.0"
+  },
+  "ava": {
+    "require": ["babel-register"],
+    "babel": "inherit"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-0",
+      "react"
+    ],
+    "plugins": [
+      "transform-async-to-generator"
+    ]
+  }
+}
