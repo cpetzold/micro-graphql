@@ -9,7 +9,7 @@ import {
   GraphQLString
 } from 'graphql'
 
-import graphqlListener from '../'
+import createHandler from '../'
 
 // From https://github.com/zeit/micro/blob/master/test/index.js
 const listen = (fn, opts) => {
@@ -56,11 +56,9 @@ const TestSchema = new GraphQLSchema({
 })
 
 test('query params', async t => {
-  const listener = graphqlListener({
-    schema: TestSchema
-  })
+  const handler = createHandler({ schema: TestSchema })
 
-  const url = await listen(listener)
+  const url = await listen(handler)
   const res = await get(url, {
     query: '{ test }'
   })
