@@ -1,13 +1,16 @@
 {
   "name": "micro-graphql",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.1",
+  "description": "Create a performant graphql server with micro and graphql-js",
+  "author": "Conner Petzold",
+  "repository": "cpetzold/micro-graphql",
+  "license": "MIT",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "ava --verbose"
+    "test": "ava --verbose",
+    "build": "babel -d dist src",
+    "prepublish": "npm run build"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "graphql": "^0.6.2"
   },
